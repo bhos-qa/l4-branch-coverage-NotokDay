@@ -82,7 +82,15 @@ public class VulnerableClass {
 
     public double power(double base, double exponent) {return Math.pow(base, exponent);}
     public int absoluteValue(int a) {return Math.abs(a);}
-    public int multiply(int a, int b) {return a*b;}
+    public int multiply(int a, int b)
+    {
+        int result = a*b;
+        return result;
+    }
     public String greet(String username){return "<h1>Welcome " + username + "</h1>";} //vulnerable to xss
-    public long add(long a, long b) {return a+b;}
+    public long add(long a, long b)
+    {
+        long result = a+b;
+        return result;
+    }
 }
