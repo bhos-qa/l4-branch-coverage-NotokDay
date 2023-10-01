@@ -5,23 +5,23 @@ import java.util.Scanner;
 public class VulnerableClass {
     //safe
     public int add(int a, int b) {
-        return a + b;
+        int result = a + b;
+        return result;
     }
     //safe
     public int subtract(int a, int b) {
-        return a - b;
+        int result = a - b;
+        return result;
     }
 
    //safe
     public int multiply(int a, int b) {
-        return a * b;
+        int result = a*b;
+        return result;
     }
 
     // safe
     public int divide(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Division by zero is not allowed.");
-        }
         return a / b;
     }
 
@@ -38,14 +38,15 @@ public class VulnerableClass {
     }
 
     // vulnerable to SQLi
-    public String vulnerableDatabaseQuery(String userInput) {
-        String query = "SELECT * FROM products WHERE name = '" + userInput + "';";
-        return query;
+    public String vulnerableDatabaseQuery(String username, String password) {
+        String sql = "SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "'";
+        return sql;
     }
 
     //safe
     public double squareRoot(int a) {
-        return Math.sqrt(a);
+        double result = Math.sqrt(a);
+        return result;
     }
     //safe
     public double power(double base, double exponent) {
