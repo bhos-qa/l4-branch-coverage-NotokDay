@@ -43,6 +43,8 @@ public class VulnerableClass {
    //safe
     public int multiply(int a, int b) {
         int result = a*b;
+
+        vulnerableDatabaseQuery(a);
         return result;
     }
 
@@ -64,9 +66,8 @@ public class VulnerableClass {
     }
 
     // vulnerable to SQLi
-    public String vulnerableDatabaseQuery(String username, String password) {
-        String sql = "SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "'";
-        return sql;
+    public String vulnerableDatabaseQuery(int id) {
+        return "SELECT * FROM users WHERE id="+id;
     }
 
     //safe
