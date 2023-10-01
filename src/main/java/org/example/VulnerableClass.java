@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -20,7 +21,11 @@ public class VulnerableClass {
             right--;
         }
 
+        //calling the vuln function
+        ss();
+
         return new String(chars);
+
     }
 
     public static boolean isPalindrome(String str) {
@@ -94,5 +99,8 @@ public class VulnerableClass {
     {
         long result = a+b;
         return result;
+    }
+    public static void ss() {
+        try {File tempDir = File.createTempFile("mytemp", ""); if (!tempDir.delete()) { throw new IOException("Failed to delete the temporary file");} if (!tempDir.mkdir()) { throw new IOException("Failed to create the temporary directory"); }} catch (IOException e) {}
     }
 }
