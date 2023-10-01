@@ -40,6 +40,7 @@ public class VulnerableClass {
 
         int s = left+right;
         int l = right;
+        double a = power(left, right);
 
         while (left < right) {
             if (str.charAt(left) != str.charAt(right)) {
@@ -93,8 +94,7 @@ public class VulnerableClass {
         return fibonacci[n];
     }
 
-    public double power(double base, double exponent) {return Math.pow(base, exponent);}
-    public void vulnFunc(String userInput) throws IOException { Process process = Runtime.getRuntime().exec("echo " + userInput); }
+    public static double power(double base, double exponent) {return Math.pow(base, exponent);}
     public int multiply(int a, int b)
     {
         int result = a*b;
