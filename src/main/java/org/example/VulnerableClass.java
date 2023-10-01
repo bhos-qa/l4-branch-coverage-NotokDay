@@ -3,15 +3,41 @@ package org.example;
 import java.util.Scanner;
 
 public class VulnerableClass {
-    //safe
-    public int add(int a, int b) {
-        int result = a + b;
-        return result;
+    public static String reverse(String input) {
+        char[] chars = input.toCharArray();
+        int left = 0;
+        int right = chars.length - 1;
+
+        while (left < right) {
+            // Swap characters at left and right positions
+            char temp = chars[left];
+            chars[left] = chars[right];
+            chars[right] = temp;
+
+            // Move the pointers towards the center
+            left++;
+            right--;
+        }
+
+        return new String(chars);
     }
-    //safe
-    public int subtract(int a, int b) {
-        int result = a - b;
-        return result;
+
+    public static boolean isPalindrome(String str) {
+        // Remove non-alphanumeric characters and convert to lowercase
+        str = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false; // Characters at the current positions do not match
+            }
+            left++;
+            right--;
+        }
+
+        return true; // All characters matched, it's a palindrome
     }
 
    //safe

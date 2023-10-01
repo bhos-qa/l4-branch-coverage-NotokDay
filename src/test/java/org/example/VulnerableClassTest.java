@@ -6,15 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class VulnerableClassTest {
     @Test
-    public void TestingVulnerableClassFunctions_add() {
+    public void TestingVulnerableClassFunctions_reverse() {
         var VulnerableClassInstance = new VulnerableClass();
-        assertEquals(5, VulnerableClassInstance.add(1,4));
+        assertEquals("1tseT", VulnerableClassInstance.reverse("Test1"));
     }
 
     @Test
-    public void TestingVulnerableClassFunctions_subtract() {
+    public void TestingVulnerableClassFunctions_isPalindrome() {
         var VulnerableClassInstance = new VulnerableClass();
-        assertEquals(5, VulnerableClassInstance.subtract(6,1));
+        boolean result = VulnerableClassInstance.isPalindrome("lalalal");
+        assertTrue(result);
     }
 
     @Test
