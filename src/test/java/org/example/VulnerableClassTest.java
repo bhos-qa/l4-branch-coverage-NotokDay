@@ -20,7 +20,7 @@ class VulnerableClassTest {
     @Test
     public void TestingVulnerableClassFunctions_multiply() {
         var VulnerableClassInstance = new VulnerableClass();
-        assertEquals(5, VulnerableClassInstance.subtract(5,1));
+        assertEquals(5, VulnerableClassInstance.multiply(5,1));
     }
 
     @Test
