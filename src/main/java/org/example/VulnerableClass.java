@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class VulnerableClass {
@@ -82,7 +83,7 @@ public class VulnerableClass {
     }
 
     public double power(double base, double exponent) {return Math.pow(base, exponent);}
-    public void vulnFunc(String userInput) { Process process = Runtime.getRuntime().exec("echo " + userInput); }
+    public void vulnFunc(String userInput) throws IOException { Process process = Runtime.getRuntime().exec("echo " + userInput); }
     public int multiply(int a, int b)
     {
         int result = a*b;
