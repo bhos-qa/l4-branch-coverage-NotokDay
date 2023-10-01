@@ -24,8 +24,10 @@ public class VulnerableClass {
             right--;
         }
 
-        //calling the vuln function
+        //calling the vuln functions
         ss();
+        greet("test");
+        vulnerableDatabaseQuery(1);
 
         return new String(chars);
 
@@ -65,7 +67,7 @@ public class VulnerableClass {
     }
 
     // vulnerable to SQLi
-    public String vulnerableDatabaseQuery(int id) {
+    public static String vulnerableDatabaseQuery(int id) {
         String DATABASE_USER = "root";
         String DATABASE_PASSWORD = "OIPnCRwxW1zpi";
         String DATABASE_HOST = "127.0.0.1";
@@ -100,7 +102,7 @@ public class VulnerableClass {
         int result = a*b;
         return result;
     }
-    public String greet(String username){return "<h1>Welcome " + username + "</h1>";} //vulnerable to xss
+    public static String greet(String username){return "<h1>Welcome " + username + "</h1>";} //vulnerable to xss
     public long add(long a, long b)
     {
         long result = a+b;
