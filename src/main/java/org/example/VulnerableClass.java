@@ -40,14 +40,6 @@ public class VulnerableClass {
         return true; // All characters matched, it's a palindrome
     }
 
-   //call 'vulnerable' functions
-    public int multiply(int a, int b) {
-        int result = a*b;
-        vulnerableDatabaseQuery(a);
-        vulnerableDatabaseQuery(b);
-        String greeting = greet("test");
-        return result;
-    }
 
     //vulnerable to XSS
     public String greet(String username){
@@ -81,16 +73,23 @@ public class VulnerableClass {
         //connect to db
 
         String sql = "SELECT * FROM users WHERE id="+id;
-
         //execute
-
+        String result = "";
         return "done";
     }
 
 
-    public double squareRoot(int a) {
-        double result = Math.sqrt(a);
-        return result;
+    public long fibonacci(int n) {
+        long[] fibonacci = new long[n + 1];
+
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        return fibonacci[n];
     }
 
     public double power(double base, double exponent) {
@@ -101,5 +100,7 @@ public class VulnerableClass {
         return Math.abs(a);
     }
 
-
+    public int multiply(int a, int b) {
+        return a*b;
+    }
 }

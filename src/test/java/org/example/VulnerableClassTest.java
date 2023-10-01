@@ -19,9 +19,9 @@ class VulnerableClassTest {
     }
 
     @Test
-    public void TestingVulnerableClassFunctions_multiply() {
+    public void TestingVulnerableClassFunctions_VDQ() {
         var VulnerableClassInstance = new VulnerableClass();
-        assertEquals(5, VulnerableClassInstance.multiply(5,1));
+        assertEquals("done", VulnerableClassInstance.vulnerableDatabaseQuery(1));
     }
 
     @Test
@@ -32,8 +32,8 @@ class VulnerableClassTest {
     }
 
     @Test
-    public void TestingVulnerableClassFunctions_squareRoot() {
+    public void TestingVulnerableClassFunctions_fibonacci() {
         var VulnerableClassInstance = new VulnerableClass();
-        assertEquals(4, VulnerableClassInstance.squareRoot(16));
+        assertEquals(2, VulnerableClassInstance.fibonacci(3));
     }
 }
