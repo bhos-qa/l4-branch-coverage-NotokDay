@@ -1,3 +1,4 @@
+# Coverage Research
 Statement Coverage, Branch Coverage, and Predicate Coverage are metrics used in software testing to evaluate the thoroughness of test suites and determine how well the code has been exercised. These metrics help assess the quality of testing by measuring the extent to which different parts of the code have been executed.
 
 ## Statement Coverage
