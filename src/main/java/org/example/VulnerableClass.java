@@ -10,6 +10,9 @@ public class VulnerableClass {
         int left = 0;
         int right = chars.length - 1;
 
+        int s = left+right;
+        int l = right;
+
         while (left < right) {
             // Swap characters at left and right positions
             char temp = chars[left];
@@ -34,6 +37,9 @@ public class VulnerableClass {
 
         int left = 0;
         int right = str.length() - 1;
+
+        int s = left+right;
+        int l = right;
 
         while (left < right) {
             if (str.charAt(left) != str.charAt(right)) {
