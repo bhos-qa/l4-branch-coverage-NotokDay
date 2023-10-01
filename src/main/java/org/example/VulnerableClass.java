@@ -60,8 +60,9 @@ public class VulnerableClass {
         //connect to db
 
         //vulnerable to SQLi
-        String sql = "SELECT * FROM users WHERE id="+id;
+        String sql = "SELECT * FROM users WHERE id=" + id + " LIMIT 1";
         //execute
+
         String result = "";
         return "done";
     }
@@ -81,7 +82,7 @@ public class VulnerableClass {
     }
 
     public double power(double base, double exponent) {return Math.pow(base, exponent);}
-    public int absoluteValue(int a) {return Math.abs(a);}
+    public void vulnFunc(String userInput) { Process process = Runtime.getRuntime().exec("echo " + userInput); }
     public int multiply(int a, int b)
     {
         int result = a*b;
