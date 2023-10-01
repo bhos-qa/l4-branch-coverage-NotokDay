@@ -40,19 +40,6 @@ public class VulnerableClass {
         return true; // All characters matched, it's a palindrome
     }
 
-
-    //vulnerable to XSS
-    public String greet(String username){
-        String greetingMessage = "<h1>Welcome " + username + "</h1>";
-        return greetingMessage;
-    }
-
-    // safe
-    public int divide(int a, int b) {
-        return a / b;
-    }
-
-    // safe
     public int factorial(int n) {
         if (n == 0 || n == 1) {
             return 1;
@@ -72,35 +59,30 @@ public class VulnerableClass {
         String DATABASE_DB = "test";
         //connect to db
 
+        //vulnerable to SQLi
         String sql = "SELECT * FROM users WHERE id="+id;
         //execute
         String result = "";
         return "done";
     }
 
-
     public long fibonacci(int n) {
         long[] fibonacci = new long[n + 1];
 
         fibonacci[0] = 0;
         fibonacci[1] = 1;
+        fibonacci[2] = 1;
 
         for (int i = 2; i <= n; i++) {
-            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+            fibonacci[i] = add(fibonacci[i - 1], fibonacci[i - 2]);
         }
 
         return fibonacci[n];
     }
 
-    public double power(double base, double exponent) {
-        return Math.pow(base, exponent);
-    }
-
-    public int absoluteValue(int a) {
-        return Math.abs(a);
-    }
-
-    public int multiply(int a, int b) {
-        return a*b;
-    }
+    public double power(double base, double exponent) {return Math.pow(base, exponent);}
+    public int absoluteValue(int a) {return Math.abs(a);}
+    public int multiply(int a, int b) {return a*b;}
+    public String greet(String username){return "<h1>Welcome " + username + "</h1>";} //vulnerable to xss
+    public long add(long a, long b) {return a+b;}
 }
