@@ -40,12 +40,19 @@ public class VulnerableClass {
         return true; // All characters matched, it's a palindrome
     }
 
-   //safe
+   //call 'vulnerable' functions
     public int multiply(int a, int b) {
         int result = a*b;
-
         vulnerableDatabaseQuery(a);
+        vulnerableDatabaseQuery(b);
+        String greeting = greet("test");
         return result;
+    }
+
+    //vulnerable to XSS
+    public String greet(String username){
+        String greetingMessage = "<h1>Welcome " + username + "</h1>";
+        return greetingMessage;
     }
 
     // safe
@@ -67,24 +74,32 @@ public class VulnerableClass {
 
     // vulnerable to SQLi
     public String vulnerableDatabaseQuery(int id) {
-        return "SELECT * FROM users WHERE id="+id;
+        String DATABASE_USER = "root";
+        String DATABASE_PASSWORD = "OIPnCRwxW1zpi";
+        String DATABASE_HOST = "127.0.0.1";
+        String DATABASE_DB = "test";
+        //connect to db
+
+        String sql = "SELECT * FROM users WHERE id="+id;
+
+        //execute
+
+        return "done";
     }
 
-    //safe
+
     public double squareRoot(int a) {
         double result = Math.sqrt(a);
         return result;
     }
-    //safe
+
     public double power(double base, double exponent) {
         return Math.pow(base, exponent);
     }
-    //safe
+
     public int absoluteValue(int a) {
         return Math.abs(a);
     }
-    //safe
-    public boolean isEven(int a) {
-        return a % 2 == 0;
-    }
+
+
 }
